@@ -9,7 +9,7 @@ import Home from './pages/home';
  */
 @Component({
   selector: 'app',
-  providers: [ ...FORM_PROVIDERS ],
+  providers: [ ...FORM_PROVIDERS,  ],
   directives: [ ...ROUTER_DIRECTIVES],
   pipes: [],
   template: `
