@@ -9,9 +9,8 @@ import 'angular2/core';
 import 'angular2/http';
 import 'angular2/router';
 
-// RxJS
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
+import 'rxjs/Rx';
+
 
 // Angular 2 Material 2
 // TODO(gdi2290): uncomment when material is fixed

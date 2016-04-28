@@ -1,4 +1,4 @@
-import {fdescribe, beforeEach, beforeEachProviders, inject, injectAsync, it} from 'angular2/testing';
+import {fdescribe, beforeEach, beforeEachProviders, inject, async, it} from 'angular2/testing';
 import {TestProviderConfig, TestProvider} from "./test-provider";
 import {provide} from "angular2/core";
 
@@ -19,12 +19,12 @@ describe('TestProvider', () => {
     expect(testProvider.syncMethod()).toEqual(config.configValue);
   });
 
-  it('has promise method', injectAsync([], () => {
+  it('has promise method', async(inject([], () => {
     return testProvider.promiseMethod()
       .then((value) => {
         expect(value).toEqual(config.configValue);
       });
-  }));
+  })));
 
   it('has event emitter method', (done) => {
     let spyObject = {

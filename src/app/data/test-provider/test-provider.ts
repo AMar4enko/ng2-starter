@@ -1,6 +1,5 @@
 import {Injectable} from "angular2/core";
 import {Observable} from "rxjs/Observable";
-require('rxjs/Rx');
 
 export class TestProviderConfig {
   constructor(public configValue: String) {

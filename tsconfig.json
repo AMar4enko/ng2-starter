@@ -4,7 +4,8 @@
     "module": "commonjs",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "noEmitHelpers": true
   },
   "exclude": [
     "node_modules",
@@ -20,7 +21,8 @@
   ],
   "awesomeTypescriptLoaderOptions": {
     "resolveGlobs": true,
-    "forkChecker": true
+    "forkChecker": true,
+    "forkCheckerSilent": true
   },
   "compileOnSave": false,
   "buildOnSave": false,

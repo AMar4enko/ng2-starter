@@ -8,22 +8,21 @@
  * all here! Crazy huh. So we need to do some setup
  */
 Error.stackTraceLimit = Infinity;
-// require('phantomjs-polyfill');
-// require('es6-promise');
-// require('es6-shim');
-// require('es7-reflect-metadata');
-
 
 // Prefer CoreJS over the polyfills above
 require('core-js');
 
-require('zone.js/dist/zone.js');
-require('zone.js/dist/long-stack-trace-zone.js');
+require('core-js/es6');
+require('core-js/es7/reflect');
+require('ts-helpers');
+require('zone.js/lib/zone');
+require('zone.js/dist/zone');
+require('zone.js/dist/async-test');
+require('zone.js/dist/fake-async-test');
 require('zone.js/dist/jasmine-patch.js');
 
 // RxJS
-require('rxjs/add/operator/map');
-require('rxjs/add/operator/mergeMap');
+require('rxjs/Rx');
 
 var testing = require('angular2/testing');
 var browser = require('angular2/platform/testing/browser');

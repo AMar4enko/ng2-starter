@@ -3,9 +3,9 @@
  */
 import * as ngCore from 'angular2/core';
 import * as browser from 'angular2/platform/browser';
-import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
+import {ROUTER_PROVIDERS} from 'angular2/router';
+import {LocationStrategy, HashLocationStrategy} from 'angular2/platform/common';
 import {HTTP_PROVIDERS} from 'angular2/http';
-import {provideInitialState, hotModuleReplacement} from 'angular2-hmr';
 
 /*
  * App Environment Providers
@@ -40,14 +40,4 @@ export function main() {
         .catch(err => console.error(err));
 }
 
-/*
- * Hot Module Reload
- * experimental version by @gdi2290
- */
-if ('development' === ENV && HMR === true) {
-  // activate hot module reload
-  hotModuleReplacement(main, module);
-} else {
-  // bootstrap when documetn is ready
-  document.addEventListener('DOMContentLoaded', () => main());
-}
+document.addEventListener('DOMContentLoaded', main);
