@@ -1,11 +1,12 @@
 /*
  * Providers provided by Angular
  */
-import * as ngCore from 'angular2/core';
-import * as browser from 'angular2/platform/browser';
-import {ROUTER_PROVIDERS} from 'angular2/router';
-import {LocationStrategy, HashLocationStrategy} from 'angular2/platform/common';
-import {HTTP_PROVIDERS} from 'angular2/http';
+import * as ngCore from '@angular/core';
+import { bootstrap } from '@angular/platform-browser-dynamic';
+import { provideRouter, RouterConfig } from '@angular/router';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { HTTP_PROVIDERS } from '@angular/http';
+import { routerConfig } from './app/routes';
 
 /*
  * App Environment Providers
@@ -15,9 +16,9 @@ const ENV_PROVIDERS = [];
 
 if ('production' === process.env.ENV) {
     ngCore.enableProdMode();
-    ENV_PROVIDERS.push(browser.ELEMENT_PROBE_PROVIDERS_PROD_MODE);
+    // ENV_PROVIDERS.push(browser.ELEMENT_PROBE_PROVIDERS_PROD_MODE);
 } else {
-    ENV_PROVIDERS.push(browser.ELEMENT_PROBE_PROVIDERS);
+    // ENV_PROVIDERS.push(browser.ELEMENT_PROBE_PROVIDERS);
 }
 
 /*
@@ -31,10 +32,10 @@ import App from './app';
  * our Services and Providers into Angular's dependency injection
  */
 export function main() {
-    return browser.bootstrap(App, [
+    return bootstrap(App, [
             ...ENV_PROVIDERS,
             ...HTTP_PROVIDERS,
-            ...ROUTER_PROVIDERS,
+            provideRouter(routerConfig),
             ngCore.provide(LocationStrategy, { useClass: HashLocationStrategy })
         ])
         .catch(err => console.error(err));

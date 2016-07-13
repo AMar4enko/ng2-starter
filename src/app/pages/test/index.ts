@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 import { FORM_DIRECTIVES } from '@angular/common';
 
 @Component({
-  selector: 'home',  // <home></home>
+  selector: 'test',  // <home></home>
   providers: [],
   directives: [
     ...FORM_DIRECTIVES
   ],
   pipes: [],
-  template: require('./home.html')
+  template: require('./test.html')
 })
 
-export class HomeViewComponent {
+export class TestViewComponent {
   data = { value: '' };
 
   constructor() {
@@ -28,7 +28,6 @@ export class HomeViewComponent {
 }
 
 export const route = {
-  path: '',
-  useAsDefault: true,
-  component: HomeViewComponent
+  path: 'test',
+  component: TestViewComponent
 };

@@ -1,4 +1,12 @@
-import {fdescribe, beforeEach, beforeEachProviders, inject, async, it} from 'angular2/testing';
+import {
+  fdescribe,
+  beforeEach,
+  beforeEachProviders,
+  inject,
+  async,
+  it
+} from 'angular2/testing';
+
 import {TestProviderConfig, TestProvider} from "./test-provider";
 import {provide} from "angular2/core";
 

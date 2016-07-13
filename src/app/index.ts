@@ -1,7 +1,6 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, Router, ROUTER_DIRECTIVES} from 'angular2/router';
-import {FORM_PROVIDERS} from 'angular2/common';
-import Home from './pages/home';
+import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+import { FORM_PROVIDERS} from '@angular/common';
 
 /*
  * App Component
@@ -10,7 +9,7 @@ import Home from './pages/home';
 @Component({
   selector: 'app',
   providers: [ ...FORM_PROVIDERS,  ],
-  directives: [ ...ROUTER_DIRECTIVES],
+  directives: [ ...ROUTER_DIRECTIVES ],
   pipes: [],
   template: `
     <header>
@@ -18,10 +17,10 @@ import Home from './pages/home';
         <h1>Hello {{ name }}</h1>
         <ul>
           <li>
-            <a [routerLink]=" ['Index'] ">Index</a>
+            <a [routerLink]="['/']">Index</a>
           </li>
           <li>
-            <a [routerLink]=" ['Home'] ">Home</a>
+            <a [routerLink]="['/test']">Index</a>
           </li>
         </ul>
       </nav>
@@ -34,11 +33,6 @@ import Home from './pages/home';
     </footer>
   `
 })
-@RouteConfig([
-  { path: '/', component: Home, name: 'Index' },
-  { path: '/home', component: Home, name: 'Home' },
-  { path: '/**', redirectTo: ['Index'] }
-])
 export default class App {
   name = 'Angular 2 Webpack Starter';
   constructor() {
